@@ -31,7 +31,7 @@ def scrape_books(pages=5):
         if response.status_code != 200:
             break
 
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(response.text, "lxml")
         books = soup.find_all("article", class_="product_pod")
 
         for book in books:
